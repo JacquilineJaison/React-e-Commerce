@@ -3,6 +3,14 @@ import Header from "./components/Layout/Header";
 import Groceries from "./components/Grocery/Groceries";
 import CartDialog from "./components/Cart/CartDialog";
 
+
+
+
+// TODO CREATE A Modal using portal from scartch in another branch
+
+
+
+
 const App = () => {
   const [display, setDisplay] = useState<boolean>(false);
 

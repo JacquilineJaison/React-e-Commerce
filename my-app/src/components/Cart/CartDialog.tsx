@@ -4,25 +4,31 @@ import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
-
 import ListItemText from "@mui/material/ListItemText";
-
-// TODO CREATE A Modal using portal from scartch in another branch
 
 type CartDialogProps = {
   onShut: () => void;
   display: boolean;
 };
 
+type CartItem = {
+  id: number;
+  name: string;
+  amount: number;
+  price: number;
+};
+
 const CartDialog = ({ onShut, display }: CartDialogProps) => {
   const cartItems = (
     <ul>
-      {[{ id: "c1", name: "milk", amount: 2, price: 14 }].map((item) => (
+      {[{ id: "c1", name: "milk", amount: 2, price: 14}].map((item) => (
         <ListItem disableGutters key={item.id}>
-            <ListItemButton >
-            <ListItemText primary={item.name + ' ' + item.price + '*' + item.amount}/>              
-            </ListItemButton>
-          </ListItem>
+          <ListItemButton>
+            <ListItemText
+              primary={item.name + " " + item.price + "*" + item.amount}
+            />
+          </ListItemButton>
+        </ListItem>
       ))}
     </ul>
   );

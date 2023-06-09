@@ -1,4 +1,3 @@
-// import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
@@ -15,8 +14,7 @@ const Cart = ({onClick}:CartProps) => {
         <Chip
           icon={
             <>
-              <ShoppingCartOutlinedIcon onClick={onClick}/>
-              
+              <ShoppingCartOutlinedIcon onClick={onClick}/>              
             </>
           }
           label="My Cart"
