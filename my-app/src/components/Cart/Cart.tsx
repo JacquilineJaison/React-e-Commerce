@@ -4,19 +4,23 @@ import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Badge from "@mui/material/Badge";
 
-const Cart = () => {
+type CartProps= {
+  onClick:()=>void;
+};
+
+const Cart = ({onClick}:CartProps) => {  
   return (
     <>
       <Stack direction="row" spacing={1}>
         <Chip
           icon={
             <>
-              <ShoppingCartOutlinedIcon />
-              <Badge badgeContent={1} color="secondary" />
+              <ShoppingCartOutlinedIcon onClick={onClick}/>
+              
             </>
           }
           label="My Cart"
-        ></Chip>
+        ></Chip><Badge badgeContent={1} color="secondary" />
       </Stack>
     </>
   );

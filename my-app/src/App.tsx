@@ -1,10 +1,21 @@
-import Header from "./components/Header";
-import Groceries from "./components/Groceries";
+import { useState } from "react";
+import Header from "./components/Layout/Header";
+import Groceries from "./components/Grocery/Groceries";
+import CartDialog from "./components/Cart/CartDialog";
 
 const App = () => {
+  const [display, setDisplay] = useState<boolean>(false);
+
+  const handleDisplay = (status: boolean) => {
+    setDisplay(status);
+  };
+
   return (
     <>
-      <Header></Header>
+      {display && (
+        <CartDialog onShut={() => handleDisplay(false)} display={display} />
+      )}
+      <Header onDisplay={() => handleDisplay(true)}></Header>
       <main>
         <Groceries></Groceries>
       </main>

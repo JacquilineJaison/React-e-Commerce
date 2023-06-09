@@ -4,15 +4,13 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import Button from "@mui/material/Button";
 import ListItemButton from "@mui/material/ListItemButton";
-import Chip from "@mui/material/Chip";
-
 import TextField from "@mui/material/TextField";
 
 const DUMMY_GROCERIES = [
   {
     id: "g1",
     name: "milk",
-    price: 7.25,
+    price: 7,
   },
   {
     id: "g2",
@@ -35,13 +33,9 @@ const InStockGrocery = () => {
   const groceryList = DUMMY_GROCERIES.map((grocery) => {
     return (
       <>
-        <ListItem disablePadding>
+        <ListItem disablePadding key={grocery.id}>
           <ListItemButton>
-            <ListItemText primary={grocery.name} secondary={grocery.price} />
-            {/* <Chip
-              label={"Quantity : " + 1}
-            ></Chip>
-             */}
+            <ListItemText primary={grocery.name} secondary={grocery.price} />            
             <form>
               <TextField
                 id="outlined-basic"
