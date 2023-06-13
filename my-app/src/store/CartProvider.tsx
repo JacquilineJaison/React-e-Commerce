@@ -1,7 +1,6 @@
 import { useReducer, PropsWithChildren } from "react";
 import CartContext from "./CartContext";
 import { CartItem } from "../components/Cart/CartDialog";
-import { JsxElement } from "typescript";
 
 const defaultCartState = {
   items: [],
@@ -67,7 +66,7 @@ const cartReducer = (state: CartState, action: Action) => {
 
   return defaultCartState;
 };
-interface Props {}
+
 const CartProvider = (props: PropsWithChildren) => {
   const [cartState, dispatchCartAction] = useReducer(
     cartReducer,
