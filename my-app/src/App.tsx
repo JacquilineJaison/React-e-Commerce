@@ -2,7 +2,7 @@ import { useState } from "react";
 import Header from "./components/Layout/Header";
 import Groceries from "./components/Grocery/Groceries";
 import CartDialog from "./components/Cart/CartDialog";
-import CartProvider from './store/CartProvider';
+import CartProvider from "./store/CartProvider";
 
 // TODO Create A Modal using portal from scartch in another branch
 
@@ -22,7 +22,7 @@ const App = () => {
       <main>
         <Groceries></Groceries>
       </main>
-      </CartProvider>
+    </CartProvider>
   );
 };
 

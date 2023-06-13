@@ -1,11 +1,18 @@
-import { createContext } from 'react';
-import { CartItem } from '../components/Cart/CartDialog';
+import { createContext } from "react";
+import { CartItem } from "../components/Cart/CartDialog";
 
-const CartContext = createContext({
+type cartContext = {
+  items: CartItem[];
+  totalAmount: number;
+  addItem: null | ((item: CartItem) => void);
+  removeItem: null | ((id: number) => void);
+};
+
+const CartContext = createContext<cartContext>({
   items: [],
   totalAmount: 0,
-  addItem: (item:CartItem) => {},
-  removeItem: (id:number) => {}
+  addItem: null,
+  removeItem: null
 });
 
 export default CartContext;
