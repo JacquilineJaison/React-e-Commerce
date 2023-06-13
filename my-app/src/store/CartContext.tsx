@@ -1,9 +1,10 @@
-import React from 'react';
+import { createContext } from 'react';
+import { CartItem } from '../components/Cart/CartDialog';
 
-const CartContext = React.createContext({
+const CartContext = createContext({
   items: [],
   totalAmount: 0,
-  addItem: (item) => {},
+  addItem: (item:CartItem) => {},
   removeItem: (id:number) => {}
 });
 

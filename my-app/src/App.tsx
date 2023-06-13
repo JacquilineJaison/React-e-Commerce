@@ -2,14 +2,9 @@ import { useState } from "react";
 import Header from "./components/Layout/Header";
 import Groceries from "./components/Grocery/Groceries";
 import CartDialog from "./components/Cart/CartDialog";
+import CartProvider from './store/CartProvider';
 
-
-
-
-// TODO CREATE A Modal using portal from scartch in another branch
-
-
-
+// TODO Create A Modal using portal from scartch in another branch
 
 const App = () => {
   const [display, setDisplay] = useState<boolean>(false);
@@ -19,7 +14,7 @@ const App = () => {
   };
 
   return (
-    <>
+    <CartProvider>
       {display && (
         <CartDialog onShut={() => handleDisplay(false)} display={display} />
       )}
@@ -27,7 +22,7 @@ const App = () => {
       <main>
         <Groceries></Groceries>
       </main>
-    </>
+      </CartProvider>
   );
 };
 

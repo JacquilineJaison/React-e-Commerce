@@ -11,7 +11,7 @@ type CartDialogProps = {
   display: boolean;
 };
 
-type CartItem = {
+export type CartItem = {
   id: number;
   name: string;
   amount: number;
