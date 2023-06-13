@@ -1,10 +1,12 @@
 /* eslint-disable no-restricted-globals */
+import { useContext } from 'react';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
 import ListItemText from "@mui/material/ListItemText";
+import CartContext from "../../store/CartContext";
 
 type CartDialogProps = {
   onShut: () => void;
@@ -14,18 +16,19 @@ type CartDialogProps = {
 export type CartItem = {
   id: number;
   name: string;
-  amount: number;
+  quantity: number;
   price: number;
 };
 
 const CartDialog = ({ onShut, display }: CartDialogProps) => {
+  const cartCtx = useContext(CartContext);
   const cartItems = (
     <ul>
-      {[{ id: "c1", name: "milk", amount: 2, price: 14}].map((item) => (
+      {[{ id: "c1", name: "milk", quantity: 2, price: 14}].map((item) => (
         <ListItem disableGutters key={item.id}>
           <ListItemButton>
             <ListItemText
-              primary={item.name + " " + item.price + "*" + item.amount}
+              primary={item.name + " " + item.price + "*" + item.quantity}
             />
           </ListItemButton>
         </ListItem>
