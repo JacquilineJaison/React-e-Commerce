@@ -67,7 +67,7 @@ const cartReducer = (state: CartState, action: Action) => {
         totalAmount: updatedTotalAmount,
       };
     }
-  }  
+  }
 };
 
 const CartProvider = (props: PropsWithChildren) => {

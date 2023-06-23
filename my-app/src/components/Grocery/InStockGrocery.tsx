@@ -42,7 +42,7 @@ const InStockGrocery = () => {
                 label="Quantity"
                 variant="outlined"
               />
-              <Button variant="contained">Add</Button>
+              <Button variant="contained" onClick={()=>{}}>Add</Button>
             </form>
           </ListItemButton>
         </ListItem>

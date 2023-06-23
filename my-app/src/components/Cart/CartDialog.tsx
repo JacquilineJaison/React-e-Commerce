@@ -25,10 +25,20 @@ const CartDialog = ({ onShut, display }: CartDialogProps) => {
   const cartItems = (
     <ul>
       {[{ id: "c1", name: "milk", quantity: 2, price: 14}].map((item) => (
-        <ListItem disableGutters key={item.id}>
+        <ListItem key={item.id}>
           <ListItemButton>
             <ListItemText
               primary={item.name + " " + item.price + "*" + item.quantity}
+            />
+          </ListItemButton>
+          <ListItemButton onClick={()=>{}}>
+            <ListItemText
+              primary="Add"
+            />
+          </ListItemButton>
+          <ListItemButton onClick={()=>{}}>
+            <ListItemText
+              primary="Remove"
             />
           </ListItemButton>
         </ListItem>
@@ -37,7 +47,7 @@ const CartDialog = ({ onShut, display }: CartDialogProps) => {
   );
 
   return (
-    <Dialog onClose={onShut} open={display}>
+    <Dialog open={display}>
       <DialogTitle>Cart Items</DialogTitle>
       <List sx={{ width: "100%", bgcolor: "background.paper" }}>
         {cartItems}
@@ -47,8 +57,8 @@ const CartDialog = ({ onShut, display }: CartDialogProps) => {
         <span>35.62</span>
       </div>
       <div>
-        <button>Close</button>
-        <button>Order</button>
+        <button onClick={()=>{onShut()}}>Close</button>
+        <button onClick={()=>{}}>Order</button>
       </div>
     </Dialog>
   );
