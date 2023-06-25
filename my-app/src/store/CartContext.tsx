@@ -4,15 +4,10 @@ import { CartItem } from "../components/Cart/CartDialog";
 type cartContext = {
   items: CartItem[];
   totalAmount: number;
-  addItem: null | ((item: CartItem) => void);
-  removeItem: null | ((id: number) => void);
+  addItem: (item: CartItem) => void;
+  removeItem: (id: number) => void;
 };
 
-const CartContext = createContext<cartContext>({
-  items: [],
-  totalAmount: 0,
-  addItem: null,
-  removeItem: null
-});
+const CartContext = createContext<cartContext|null>(null);
 
 export default CartContext;
