@@ -41,9 +41,9 @@ const InStockGrocery = () => {
   const quantityRef = useRef<HTMLInputElement>(null);
 
   const addToCart = (grocery: Grocery) => {
-    console.log(quantityRef.current?.value, "value");
+    console.log(cartCtx, "value");
     console.log(grocery, "grocery");
-    cartCtx.addItem({
+    cartCtx!.addItem({
       id: grocery.id,
       name:grocery.name,
       quantity: Number(quantityRef.current?.value),
